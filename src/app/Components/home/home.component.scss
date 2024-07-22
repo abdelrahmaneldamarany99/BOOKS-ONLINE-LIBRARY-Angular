@@ -1,0 +1,83 @@
+.home-copmonent{
+  // background: azure;
+  visibility: visible;
+}
+.container {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+}
+@media (max-width:460px){
+  .container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }  
+}
+
+.card-img {
+  min-width: 100px;
+  height: 150px;
+  border-radius: 5px;
+  background: url(../../../assets/images/Blank-1823406222-1024x1024.jpg) #fafafa;
+  // background: url('Blank-1823406222-1024x1024.jpg') #fafafa;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.book-content {
+  display: flex;
+  border: 5px solid;
+  padding: 5%;
+  height: 350px;
+  overflow-y: auto;
+}
+@media (max-width:1023px){
+  .book-content{
+    flex-flow: wrap;
+    overflow-y: auto;
+  }
+}
+
+ul {
+  margin: 7%;
+}
+li {
+  margin-bottom: 10%;
+}
+
+h6 {
+  align-self: self-end;
+  margin: 0%;
+}
+
+h1 {
+  margin-left: 6%;
+}
+
+.card-custom-style {
+  width: 26%;
+  margin-bottom: 3%;
+  background: antiquewhite;
+  cursor: help;
+}
+
+@media (max-width:460px){
+  .card-custom-style {
+    width: 80%;
+  }
+}
+
+.card-custom-style:hover {
+  background: aquamarine;
+  cursor: help;
+  color: azure;
+  font-weight: bolder;
+  border:5px rgb(137, 104, 255) solid
+}
+.card-anchor{
+  cursor: help;
+}
+// @media (max-width:1024) and (min-wid) {}

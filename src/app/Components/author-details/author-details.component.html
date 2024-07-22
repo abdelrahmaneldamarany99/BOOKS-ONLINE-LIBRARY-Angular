@@ -1,0 +1,29 @@
+<div class="author-component">
+  <div *ngIf="!author && !error" class="loading-no_result">Loading...</div>
+
+  <h1>{{ author.name }}</h1>
+  <div class="container">
+    <img
+      src="https://covers.openlibrary.org/a/olid/{{ author.key }}-L.jpg"
+      class="author-img"
+      [alt]="author.name + ' image'"
+    />
+    <ul class="author-list">
+      <li class="author-list-item">Author Name : {{ author.name }}</li>
+      <!-- <li class="author-list-item">Birth date : {{author.birth_date}}</li> -->
+      <li class="author-list-item">Work count : {{ author.work_count }}</li>
+      <li class="top-subjects">Top subjects of the author :</li>
+      <li class="subjects">
+        <span class="subject">{{ author.top_subjects[0] }}</span>
+        <span class="subject">{{ author.top_subjects[1] }}</span>
+        <span class="subject">{{ author.top_subjects[2] }}</span>
+        <span class="subject">{{ author.top_subjects[3] }}</span>
+        <span class="subject">{{ author.top_subjects[4] }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <h1 *ngIf="error" class="error">
+    Something went wrong,try reloading sooner.
+  </h1>
+</div>

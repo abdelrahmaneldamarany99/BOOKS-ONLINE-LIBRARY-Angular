@@ -1,0 +1,26 @@
+<div *ngIf="!book && !error" class="loading-no_result">Loading...</div>
+
+<h1>{{ book.title }}</h1>
+<div class="container">
+  <img
+    src="https://covers.openlibrary.org/b/id/{{ book.cover_id }}-L.jpg"
+    class="book-img"
+    alt=""
+  />
+  <ul class="book-list">
+    <li class="book-list-item">
+      First publish year : {{ book.first_publish_year }}
+    </li>
+    <li class="book-list-item">Book title : {{ book.title }}</li>
+    <li class="book-list-item">
+      Author/s names :
+      <a routerLink="/author-details/{{ book.authors[0].name }}">{{
+        book.authors[0].name
+      }}</a>
+    </li>
+    <li class="book-list-item">Editions count : {{ book.edition_count }}</li>
+  </ul>
+  <h1 *ngIf="error" class="error">
+    Something went wrong,try reloading sooner.
+  </h1>
+</div>

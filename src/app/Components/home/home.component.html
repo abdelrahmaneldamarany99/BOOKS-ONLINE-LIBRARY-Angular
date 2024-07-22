@@ -1,0 +1,40 @@
+<div class="home-copmonent">
+  <div *ngIf="books && !books.length" class="loading-no_result">
+    There is no results
+  </div>
+
+  <h1>Subject : Finance</h1>
+  <div *ngIf="!books && !error" class="loading-no_result">Loading...</div>
+  <div class="container">
+    <div *ngFor="let book of books" class="card card-custom-style">
+      <a routerLink="/book-details/{{ book.bookId }}" class="card-anchor">
+        <!-- key: "/works/OL565231W" -->
+        <!-- (click)="showDetails(book)" -->
+        <div class="book-content">
+          <img
+            class="card-img"
+            src="https://covers.openlibrary.org/b/id/{{ book.cover_id }}-L.jpg"
+            [alt]="!book.cover_id ? 'Book Cover Not Available' : ''"
+          />
+          <!-- [src]="book.cover_id ? 'https://covers.openlibrary.org/b/id/{{book.cover_id}}-L.jpg' : '../assets/images/page-not-found-688965_960_720.png'" -->
+
+          <ul>
+            <li>Publication Year : {{ book.first_publish_year }}</li>
+            <li>Book Title : {{ book.title }}</li>
+            <li>
+              Author/s :
+              <a routerLink="/author-details/{{ book.authors[0].name }}">{{
+                book.authors[0].name
+              }}</a>
+            </li>
+          </ul>
+          <h6>More | Wishlist</h6>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <h1 *ngIf="error" class="error">
+    Something went wrong,try reloading sooner.
+  </h1>
+</div>
